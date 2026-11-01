@@ -1,0 +1,132 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #05060a;
+  color: #e8f4ff;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+.stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+.stage.is-running {
+  cursor: none;
+}
+
+.video,
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video {
+  transform: scaleX(-1);
+  background: #000;
+}
+
+.overlay {
+  pointer-events: none;
+}
+
+.start-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background:
+    radial-gradient(ellipse at center, rgba(20, 40, 90, 0.55), rgba(0, 0, 0, 0.88));
+}
+
+.start-overlay.is-hidden {
+  display: none;
+}
+
+.start-card {
+  max-width: 28rem;
+  text-align: center;
+}
+
+.kanji-title {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  letter-spacing: 0.12em;
+  color: #9ad8ff;
+  text-shadow:
+    0 0 12px rgba(154, 216, 255, 0.9),
+    0 0 28px rgba(100, 160, 255, 0.55);
+}
+
+.start-card h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #c8ddff;
+}
+
+.instructions {
+  margin: 0 0 1.5rem;
+  line-height: 1.55;
+  font-size: 0.95rem;
+  color: #a8bdd8;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid rgba(126, 203, 255, 0.55);
+  border-radius: 999px;
+  padding: 0.75rem 1.6rem;
+  background: linear-gradient(180deg, #1a3a6e, #0d2244);
+  color: #e8f4ff;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  border-color: #7ecbff;
+  box-shadow: 0 0 18px rgba(126, 203, 255, 0.35);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.error-text {
+  margin: 1rem 0 0;
+  color: #ff8a8a;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}

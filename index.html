@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>青銀乱残光 — Akaza Pose Effect</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.18/vision_bundle.mjs"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="stage" class="stage">
+      <video id="video" class="video" playsinline muted></video>
+      <canvas id="overlay" class="overlay"></canvas>
+
+      <div id="start-overlay" class="start-overlay">
+        <div class="start-card">
+          <p class="kanji-title">青銀乱残光</p>
+          <h1>Destructive Death — Final Form</h1>
+          <p class="instructions">
+            Stand back so your full body is in frame. Hold a deep wide squat with one
+            open palm forward and the other open palm at your hip.
+          </p>
+          <button id="enable-camera" type="button" class="btn">Enable camera</button>
+          <p id="error-text" class="error-text" hidden></p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
